@@ -1,0 +1,173 @@
+{
+  "name": "CR Queue.0",
+  "version": "1.9.0.6",
+  "manifest_version": 2,
+  "description": "An extension to provide additional features to crunchyroll.",
+  "options_page": "options.html",
+  "browser_action": {
+    "default_icon": "off.png",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "page":"background.html",
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://www.crunchyroll.com/*","https://www.crunchyroll.com/*"],
+      "exclude_matches": ["http://www.crunchyroll.com/store*"],
+      "js": ["jquery.min.js","notify.js"],
+      "css": ["cr.css"]
+    },
+    {
+      "matches": ["http://www.crunchyroll.com/videos/*","http://www.crunchyroll.com/comics/*"],
+      "exclude_matches": ["http://www.crunchyroll.com/videos/*/alpha*","http://www.crunchyroll.com/comics/*/*/volumes","http://www.crunchyroll.com/comics/*/alpha*"],
+      "js": ["watchList.js"],
+      "css": ["watch.css"]
+    },
+    {
+      "matches": ["http://www.crunchyroll.com/*/episode*","http://www.crunchyroll.com/swf/*"],
+      "js": ["ScriptSelector.js"]
+    },
+    {
+      "matches": ["http://www.crunchyroll.com/*"],
+      "exclude_matches": ["http://www.crunchyroll.com/*/episode*","http://www.crunchyroll.com/comics*","http://www.crunchyroll.com/store*","http://www.crunchyroll.com/forum*"],
+      "js":["episodeFinder.js"]
+    },
+    {
+      "matches": ["http://www.crunchyroll.com/forumcategory*"],
+      "js":["forumWatcher.js"]
+    },
+    {
+      "matches": ["http://www.crunchyroll.com/forumtopic*"],
+      "js":["threadWatcher.js","blockUsers.js"]
+    },
+    {
+      "matches":["http://www.crunchyroll.com/user/beardfist*","http://www.crunchyroll.com/user/Beardfist*"],
+      "css": ["beardfist.css"],
+      "js":["jquery-ui-1.9.2.custom.min.js","beardfist.js"]
+    },
+    {
+      "matches":["http://www.crunchyroll.com/user/Starry*","http://www.crunchyroll.com/user/starry*"],
+      "js":["jquery-ui-1.9.2.custom.min.js","beardfist.js"]
+    },
+    {
+      "matches":["http://www.crunchyroll.com/user/*"],
+      "js":["addBlockedUser.js"]
+    },
+	{
+	  "matches":["http://www.crunchyroll.com/live*"],
+	  "js": ["live.js"]
+	},
+	{
+	  "matches":["http://www.crunchyroll.com/ajax/?req=RpcApiAutoComplete_Entity&type=3*"],
+	  "js": ["userSearch.js"]
+	},
+	{
+	  "matches":["http://www.crunchyroll.com/usercommentsearch*"],
+	  "js":["commentContext.js"]
+	},
+	{
+	  "matches":["http://www.crunchyroll.com/anime-news*","http://www.crunchyroll.com/*/episode*"],
+	  "js":["blockComments.js"]
+	},
+    {
+      "matches": ["http://www.crunchyroll.com/*/episode*"],
+	  "js":["sharedViewer.js","swfobject.js"]
+	}
+  ],
+  "permissions": [
+  "storage","tabs","http://www.crunchyroll.com/*","cookies","webRequest","webRequestBlocking","notifications"
+  ],
+  "icons" : {
+    "48": "48.png",
+    "128": "128.png"
+  },
+  "web_accessible_resources": [
+    "checkmark.png",
+    "checkmark_white.png",
+    "checkmark_white_in.png",
+    "checkmark_bw.png",
+    "logo.png",
+    "red.gif",
+    "green.gif",
+    "bubble-gray-240.png",
+    "comments-bubble.png",
+    "bubble-group.png",
+    "quote_start.png",
+    "quote_end.png",
+    "views-count-bubble.png",
+    "collection_arrow.png",
+    "loading_white_16_16.gif",
+    "queue_dropdown_arrow.png",
+    "queue_arrow.png",
+    "stars/crstar_black_tiny.gif",
+    "stars/crstar_blue_tiny.gif",
+    "stars/crstar_brown_tiny.gif",
+    "stars/crstar_darkergreen_tiny.gif",
+    "stars/crstar_darkerpurple_tiny.gif",
+    "stars/crstar_darkerRed_tiny.gif",
+    "stars/crstar_darkerRed2_tiny.gif",
+    "stars/crstar_darkyellow_tiny.gif",
+    "stars/crstar_deepblue_tiny.gif",
+    "stars/crstar_green_tiny.gif",
+    "stars/crstar_greenblue_tiny.gif",
+    "stars/crstar_grey_tiny.gif",
+    "stars/crstar_lightblue_tiny.gif",
+    "stars/crstar_lightbrown_tiny.gif",
+    "stars/crstar_lightgreen_tiny.gif",
+    "stars/crstar_lightgrey_tiny.gif",
+    "stars/crstar_lightorange_tiny.gif",
+    "stars/crstar_lightpurple_tiny.gif",
+    "stars/crstar_lightpurple2_tiny.gif",
+    "stars/crstar_orange_tiny.gif",
+    "stars/crstar_pink_tiny.gif",
+    "stars/crstar_pink2_tiny.gif",
+    "stars/crstar_purple_tiny.gif",
+    "stars/crstar_red_tiny.gif",
+    "stars/crstar_white_tiny.gif",
+    "stars/crstar_yellow_tiny.gif",
+    "stars/crstar_yellow2_tiny.gif",
+    "stars/crstar_black_small.gif",
+    "stars/crstar_blue_small.gif",
+    "stars/crstar_brown_small.gif",
+    "stars/crstar_darkergreen_small.gif",
+    "stars/crstar_darkerpurple_small.gif",
+    "stars/crstar_darkerRed_small.gif",
+    "stars/crstar_darkerRed2_small.gif",
+    "stars/crstar_darkyellow_small.gif",
+    "stars/crstar_deepblue_small.gif",
+    "stars/crstar_green_small.gif",
+    "stars/crstar_greenblue_small.gif",
+    "stars/crstar_grey_small.gif",
+    "stars/crstar_lightblue_small.gif",
+    "stars/crstar_lightbrown_small.gif",
+    "stars/crstar_lightgreen_small.gif",
+    "stars/crstar_lightgrey_small.gif",
+    "stars/crstar_lightorange_small.gif",
+    "stars/crstar_lightpurple_small.gif",
+    "stars/crstar_lightpurple2_small.gif",
+    "stars/crstar_orange_small.gif",
+    "stars/crstar_pink_small.gif",
+    "stars/crstar_pink2_small.gif",
+    "stars/crstar_purple_small.gif",
+    "stars/crstar_red_small.gif",
+    "stars/crstar_white_small.gif",
+    "stars/crstar_yellow_small.gif",
+    "stars/crstar_yellow2_small.gif",
+    "smilies/all_static_460_20.png",
+    "smilies/blink.gif",
+    "smilies/rolleyes.gif",
+    "smilies/sweatingbullets.gif",
+    "smilies/unsure.gif",
+    "smilies/wacko.gif",
+    "bg.png",
+    "bodybg.png",
+    "jquery-2.0.2.min.map",
+    "flash/xmlsockettest.swf",
+	"reset.png",
+	"close.png"
+  ]
+}
+
+

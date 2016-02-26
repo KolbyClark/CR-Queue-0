@@ -1,0 +1,41 @@
+.left::after{
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
+}
+.hidden-link{
+  display: none;
+}
+.extension{
+  border: none;
+  border-radius: 0.25rem;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  height: 1.5rem;
+  line-height: normal;
+  font-size: 0.846em;
+  font-family: Verdana, 'Lucida Grande', sans-serif;
+  box-shadow: 0 1px 2px rgba(54, 50, 49, 0.35);
+  opacity: 0;
+}
+.extension.not-in-list{
+  background: rgb(0, 145, 209);
+}
+.extension.not-in-list:hover{
+  background: rgb(10, 109, 164);
+}
+.extension.in-list{
+  background: rgb(114, 108, 105);
+}
+.extension.in-list:hover{
+  background: rgb(160, 152, 149);
+}
+.extension.reset{
+  background: rgb(232, 51, 51);
+}
+.extension.reset:hover{
+  background: rgb(189, 43, 43);
+}

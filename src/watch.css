@@ -1,0 +1,8 @@
+.watch-box{
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 21px;
+  height: 22px;
+  cursor:pointer;
+}

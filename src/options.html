@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="jquery.min.js"></script>
+    <script src="jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="options.js"></script>
+    <style>
+      #threads{
+        overflow: hidden;
+        width: auto;
+      }
+      .button{
+        disply: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="threads">
+      <h3>Watched Threads</h3>
+      <select multiple="multiple" id="threadCont"></select><br />
+      <button type="button" class="button" id="removeThreads">Remove selected</button>
+    </div>
+    <div id="forums">
+      <h3>Watched Forums</h3>
+      <select multiple="multiple" id="forumCont"></select><br />
+      <button type="button" class="button" id="removeForums">Remove selected</button>
+    </div>
+    <div id="users">
+      <h3>Blocked Users</h3>
+      <input type="text" id="addUser" placeholder="Block User"></input><br />
+      <button type="button" class="button" id="blockUser">Block User</button><br />
+      <select multiple="multiple" id="userCont"></select><br />
+      <button type="button" class="button" id="removeUsers">Remove selected</button>
+    </div>
+    <div id="blacklist">
+      <h3>Blacklisted Threads</h3>
+      <select multiple="multiple" id="blacklistCont"></select><br />
+      <button type="button" class="button" id="removeBlacklist">Remove selected</button>
+    </div>
+    <div id="theme">
+      <h3>Dark Theme toggle</h3>
+      <select id="themeSelect">
+        <option value="true">Enabled</option>
+        <option value="false">Disabled</option>
+      </select>
+    </div>
+    <!--<div id="seam">
+      <h3>Seamless Thread Loading</h3>
+      <select id="seamSelect">
+        <option value="true">Enabled</option>
+        <option value="false">Disabled</option>
+      </select>
+    </div>-->
+    <div id="webm">
+      <h3>Embedded webm support</h3>
+      <select id="webmSelect">
+        <option value="true">Enabled</option>
+        <option value="false">Disabled</option>
+      </select>
+    </div>
+    <div id="siteNews">
+      <h3>New Site News only</h3>
+      <select id="siteNewsSelect">
+        <option value="true">Enabled</option>
+        <option value="false">Disabled</option>
+      </select>
+    </div>
+	<div id="markWatch">
+      <h3>Actually mark shows as watched</h3>
+      <select id="markWatchSelect">
+        <option value="true">Enabled</option>
+        <option value="false">Disabled</option>
+      </select>
+    </div>
+	<!--<div id="watchComments">
+      <h3>Watch comments for replies</h3>
+      <select id="watchCommentsSelect">
+        <option value="true">Enabled</option>
+        <option value="false">Disabled</option>
+      </select>
+    </div>-->
+    <div id="richNotif">
+      <h3>Show Rich Notifications</h3>
+      <select id="richNotifSelect">
+        <option value="true">Enabled</option>
+        <option value="false">Disabled</option>
+      </select>
+    </div>
+  </body>
+</html>

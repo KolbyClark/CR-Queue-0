@@ -1,0 +1,68 @@
+/*
+a#logo_beta.left{
+  background: url('chrome-extension://__MSG_@@extension_id__/logo.png') 0px 19px no-repeat;
+}
+div#template_container.template-container{
+  background-color: rgba(242, 242, 242,0.7);
+}
+div#template_body{
+  background-color: rgba(255, 255, 255,0.7);
+}
+div#footer{
+  background-color: rgba(255,255,255,0.7);
+}
+div#footer_menu{
+  background-color: rgba(243,243,243,0);
+}
+
+ul#header_menubar_beta li a, ul#header_menubar_beta .login a, ul#header_menubar_beta .signup a{
+  color: #F0F0F0;
+}
+a#logo_beta.logo-enUS{
+  background: left 19px no-repeat;
+}
+div#header_beta{
+  background: none;
+}
+a#header_search_submit_beta{
+  border: none;
+}
+input#header_search_input{
+  border: none;
+  color: #f0f0f0;
+  background-color: rgba(201,201,201,0.75);
+}
+input#header_search_input.placeholder{
+ color: #f0f0f0;
+}
+input#header_search_input::-webkit-input-placeholder{
+  color: rgba(240,240,240,0.5);
+}
+div#header_search_beta #header_search_input:focus{
+  color: #f0f0f0;
+}
+body.main-page{
+  background-image: url(http://img1.ak.crunchyroll.com/i/spire2/3e4191a116e7e22519a5df328a09e7b41360629339_main.jpg);
+  background-position:top center;
+  background-attachment:fixed;
+  background-repeat:no-repeat;
+
+}*/
+.thumb-user-small-mug img, .guestbook-list img{
+  max-height: 50px;
+}
+/*
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+*/

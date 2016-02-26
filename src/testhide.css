@@ -1,0 +1,6 @@
+li.group-item p.short-desc{
+  display:none;
+}
+li.group-item a.episode img.landscape{
+  content:url("http://static.ak.crunchyroll.com/i/coming_soon_beta_wide.jpg");
+}

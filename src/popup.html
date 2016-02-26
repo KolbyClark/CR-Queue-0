@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+    #dropdown-menu li a{
+      background: none;
+      font-weight: normal;
+      color: #F0F0F0;
+      display: inline-block;
+      padding: 8px 12px;
+      width: auto;
+      height: auto;
+      font-size: 13px;
+      text-decoration: none;
+      cursor:pointer;
+      -webkit-user-select: none
+    }
+    html{
+      background: #2F2F2F;
+      white-space: nowrap;
+      position: relative;
+     // padding: 4px 0;
+      z-index: 9999999;
+      width: auto;
+      box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.5);
+      -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.5);
+    }
+    #dropdown-menu li{
+      font-family: 'Helvetica Neue', Helvetica, arial, sans-serif;
+      list-style-image: none;
+      list-style-position: outside;
+      list-style-type: none;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: bold;
+      text-align: left;
+      vertical-align: baseline;
+      white-space: nowrap;
+    }
+    #dropdown-menu li a:hover, .toHover:hover,  div.scroll div:hover, div.notif_choices a:hover{
+      cursor:pointer;
+      background: #1d1d1d;
+      //font-weight: normal;
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    div.scroll div.notif_choices:hover{
+      background: #2F2F2F;
+    }
+    #dropdown-menu a:active {
+      background: #000;
+      color: #333;
+    }
+    .list-block{
+      padding-left:0;
+    }
+    .message-form-input{
+      display: block;
+    }
+    .hidden-link {
+      display: none!important;
+    }
+    .list-block span.right{
+      color: #f78c25;
+      width: 7px;
+     }
+    .right{
+      display: inline-block;
+      float: right;
+      //padding: 8px 12px;
+	  padding-right: 6px;
+	  padding-top: 8px;
+    }
+    div.scroll{
+      overflow-y:scroll;
+     // overflow-x:hidden;
+      max-height: 90px;
+      width: auto;
+      padding-left: 0px;
+    }
+    #notif-contain,#inbox-contain,#thread-contain,#modReport-contain{
+      padding-left: 12px;
+    }
+    #notif-contain div,#inbox-contain div,#thread-contain div,#modReport-contain{
+      font-family: 'Helvetica Neue', Helvetica, arial, sans-serif;
+      color: #F0F0F0;
+      display: block;
+      padding: 4px;
+      width: auto;
+      height: auto;
+      font-size: 13px;
+      cursor:pointer;
+      text-decoration: none;
+      -webkit-user-select: none
+    }
+    #notif-contain div a, #inbox-contain div a, #thread-contain div a,#modReport-contain div a{
+      color: #F0F0F0;
+      display: inline;
+      width: auto;
+      height: auto;
+      font-size: 13px;
+      text-decoration: none;
+      padding: 6px 12px;
+      //padding-left: 0px;
+      cursor:pointer;
+      -webkit-user-select: none
+    }
+    div.notif_choices a{
+      padding:6px 6px !important;
+    }
+	#thread-contain div a.delNotif{
+	  //float: right;
+	  display: inline-block;
+	  background-repeat: no-repeat;
+	  padding: 7px;
+	}
+    #dropdown-menu{
+      float:right;
+    }
+    #notification-content{
+      float:left;
+      //width: 150px;
+      //height: 400px;
+    }
+    ::-webkit-scrollbar {
+    width: 4px;
+    }
+ 
+    /* Track */
+    /*::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+    }*/
+ 
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      background: rgba(35,35,35,0.8); 
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    }
+    ::-webkit-scrollbar-thumb:window-inactive {
+      background: rgba(35,35,35,0.4); 
+    }
+    </style>
+    
+    <script src="jquery.min.js"></script>
+    <script src="jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    <div id="dropdown-menu">
+      <ul class="list-block">
+        <li><a id="fullscreen">Toggle Fullscreen</a></li>
+        <li class="toHover"><a id="show_form">Send Message</a></li>
+        <div id="form_pm">
+          <form name="RpcApiPm_SendPms" id="SendPms" method="post" action="http://www.crunchyroll.com/?a=formhandler">
+            <input type="hidden" name="next_url" value="">
+            <input type="hidden" name="fail_url" value="">
+            <input type="hidden" name="origin_token" id="origin_token" value="">
+            <input type="hidden" name="formname" value="RpcApiPm_SendPms">
+
+            <input class="message-form-input" id="compose_to" type="text" size="15" name="recipients" placeholder="To">
+            <input class="message-form-input" id="subject" type="text" name="subject" size="15" placeholder="Subject">
+            <textarea class="message-form-input" style="max-width:117px; margin-left:2px; margin-right:0px;" rows="5" cols="30" id="pm_body" name="body"></textarea>
+            <li><a id="submit_button" style="display:inline-block;">Send </a><a id="cancel_button" style="display:inline-block;">Cancel</a></li>
+          </form>
+        </div>
+        <li id="Notifications" class="toHover"><a >Notifications</a><span class="right" id="Notifications-badge"></span></li>
+        <div id="notif-contain"></div>
+        <li id="Inbox" class="toHover"><a >Inbox</a><span class="right" id="Inbox-badge"></span></li>
+        <div id="inbox-contain"></div>
+
+        <!--<li class="toHover" id="random"><a>Random Show</a></li>-->
+        <li class="toHover" id="queue"><a>Queue</a></li>
+        <li class="toHover" id="anime"><a>Anime</a></li>
+        <li class="toHover" id="thread"><a >Threads</a><span class="right" id="Thread-badge"></span></li>
+        <div id="thread-contain"></div>
+	<li class="toHover" id="modReport"><a >Mod Reports</a><span class="right" id="modReport-badge"></span></li>     
+	<div id="modReport-contain"></div>
+      </ul>
+    </div>
+  </body>
+</html>
